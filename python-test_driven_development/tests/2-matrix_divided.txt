@@ -1,0 +1,48 @@
+First import method to test
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+# Test  function::
+==================
+	>>> matrix = [[2, 4, 6], [8, 10, 12]]
+     	>>> print(matrix_divided(matrix, 2))
+     	[[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]
+
+     	>>> matrix = [[2.3, 5], [2, 7]]
+     	>>> print(matrix_divided(matrix, float("inf")))
+     	[[0.0, 0.0], [0.0, 0.0]]
+
+     	>>> matrix = [[1, -2.2, 3, 4.4, 5], [-6.6, 7.00, 8, 9.999, 10]
+     	>>> print(matrix_divided(matrix, 3))
+	[[0.33, -0.73, 1.0, 1.47, 1.67], [-2.2, 2.33, 2.67, 3.33, 3.33]]
+
+# Error proof function::
+========================
+	>>> matrix = None
+    	>>> print(matrix_divided(matrix, 3))
+    	Traceback (most recent call last):
+    	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+	>>> matrix = ["matrix", 3]
+        >>> print(matrix_divided(matrix, 8))
+        Traceback (most recent call last):
+        TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+	>>> matrix = None
+        >>> print(matrix_divided())
+        Traceback (most recent call last):
+        TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+	>>> matrix = None
+        >>> print(matrix_divided(None))
+        Traceback (most recent call last):
+        TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+	>>> matrix = [[1, 2, 4], [3, 9]]
+        >>> print(matrix_divided(matrix, 3))
+        Traceback (most recent call last):
+        TypeError: Each row of the matrix must have the same size
+
+	 >>> matrix = [[1, 1, 2], [2, 7, 23]]
+        >>> print(matrix_divided(matrix, 'b'))
+        Traceback (most recent call last):
+        ZeroDivisionError: division by zero
