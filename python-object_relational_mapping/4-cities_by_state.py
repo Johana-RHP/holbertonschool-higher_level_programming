@@ -11,7 +11,7 @@ if __name__ == "__main__":
     cur.execute("SELECT cities.id, cities.name, states.name FROM cities \
                 JOIN states ON cities.state_id = states.id \
                 ORDER BY cities.id")
-    
+
     query_rows = cur.fetchall()
     for row in query_rows:
         print(row)
