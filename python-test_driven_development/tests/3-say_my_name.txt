@@ -1,0 +1,37 @@
+First import method to test
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+# Test function::
+=================
+	>>> say_my_name("Kimberly", "Loayza Quintanilla")
+	My name is Kimberly Loayza Quintanilla
+
+	>>> say_my_name("Rogelia")
+	My name is Rogelia
+
+# Error proof function::
+========================
+	>>> say_my_name(111, "Last")
+	Traceback (most recent call last):
+	...
+	TypeError: first_name must be a string
+
+	>>> say_my_name("Jorge", ["OMG", "Ay"])
+	Traceback (most recent call last):
+	...
+	TypeError: last_name must be a string
+
+	>>> say_my_name("Ricardo", "Hola", "chau")
+	Traceback (most recent call last):
+	...
+	TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given
+
+	>>> say_my_name()
+	Traceback (most recent call last):
+	...
+	TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+	>>> say_my_name(None)
+	Traceback (most recent call last):
+	...
+	TypeError: first_name must be a string
